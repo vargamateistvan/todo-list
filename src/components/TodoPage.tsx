@@ -56,7 +56,7 @@ const TodoPage: React.FC<Props> = (props) => {
                     </Icon>
                 }
             </Card>}
-            <Link to="/">Back</Link>
+            <Link to="/todos">Back</Link>
         </div>
     )
 }

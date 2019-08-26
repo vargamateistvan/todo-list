@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux'
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import store from './store'
 import './App.css';
@@ -13,10 +13,12 @@ const App: React.FC = () => {
   return (
       <Provider store={store}>
         <div className="App">
-          <TodoList
-            todos={store.getState().todos.todos}
-          >
-          </TodoList>
+          <Link to="/todos">Todos</Link>
+
+          <Route 
+            path="/todos"
+            component={TodoList}
+          />
 
           <Route 
             path="/todo/:id"

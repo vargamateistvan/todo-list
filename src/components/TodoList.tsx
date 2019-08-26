@@ -1,15 +1,14 @@
 import React from 'react';
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { List } from 'antd'
 import TodoCard from './TodoCard'
-import { Todo, Todos } from '../types/index.';
+import { Todo } from '../types/index.';
+import store from '../store';
 
 // TODO Toogle todo
 
-const TodoList: React.FC<Todos> = (props) => {
-    console.log("ASD", props)
-
-    const { todos } = props
+const TodoList: React.FC = () => {
+    const todos = store.getState().todos.todos
 
     return (
       <List
